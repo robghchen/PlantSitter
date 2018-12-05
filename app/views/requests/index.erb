@@ -1,0 +1,8 @@
+<h2>Here are all the requests</h2>
+<ul>
+  <% @requests.each do |request| %>
+    <li><%= link_to request.title, request %></li>
+  <% end %>
+</ul>
+
+<%= button_to "New Request", new_request_path, method: :get %>

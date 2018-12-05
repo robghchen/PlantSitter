@@ -1,0 +1,11 @@
+<h2>New Request</h2>
+
+<ul>
+<% if flash[:error] %>
+  <% flash[:error].each do |error| %>
+    <li style="color:red"><%= error %></li>
+  <% end %>
+<% end %>
+</ul>
+
+<%= render "form" %>

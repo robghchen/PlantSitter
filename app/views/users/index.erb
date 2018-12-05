@@ -1,0 +1,8 @@
+<h2>Here are all the peeeeeooople</h2>
+<ul>
+  <% @users.each do |user| %>
+    <li><%= link_to user.name, user %></li>
+  <% end %>
+</ul>
+
+<%= button_to "Sign Up", new_user_path, method: :get %>

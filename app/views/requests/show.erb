@@ -1,0 +1,26 @@
+<h2>Request: <%= @request.title %></h2>
+<h3>I'll pay you $<%= @request.price %></h3>
+<p> <%= @request.details %> </p>
+Plants you need to take care of:
+<ul>
+  <% @request.owner.plants.each do |plant| %>
+    <li> <%= plant.species %>   </li>
+  <% end %>
+</ul>
+
+
+<%= @request.owner.name %><br>
+CONTACT INFO <br>
+Phone Number: <%= @request.owner.phone %> <br>
+Email: <%= @request.owner.email %><br>
+Zip Code: <%= @request.owner.zip %>
+  <% if @request.owner == @logged_in_user %>
+    <%= button_to "Edit Request", edit_request_path(@request), method: :get %><br/>
+    <%= button_to "Delete Request", request_path, method: :delete %>
+  <% elsif @request.sitter == nil %>
+    <%= button_to "Claim" do %>
+      <% @request.set_sitter %>
+    <% end %>
+  <% elsif @request.sitter == @logged_in_user %>
+    some other functionality
+  <% end %>

@@ -1,0 +1,3 @@
+<h2>Look at this <%= @user.name %> </h2>
+<%= button_to "Edit Profile", edit_user_path(@user), method: :get %><br/>
+<%= button_to "Delete Account", user_path, method: :delete %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  owner_id: 1
+  user_id: 1
+  apt_id: 1
+  status: MyString
+  price: 
+  details: MyString
+
+two:
+  owner_id: 1
+  user_id: 1
+  apt_id: 1
+  status: MyString
+  price: 
+  details: MyString

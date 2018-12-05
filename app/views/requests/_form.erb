@@ -1,0 +1,14 @@
+<%= form_for @request do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br/>
+
+  <%= f.label :price %>
+  <%= f.text_field :price %><br/>
+
+  <%= f.label :details %>
+  <%= f.text_area :details %><br/>
+
+  <%= f.hidden_field :owner_id, :value=> session[:user_id] %>
+
+  <%= f.submit %>
+<% end %>

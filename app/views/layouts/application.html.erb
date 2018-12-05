@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PlantSitter</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav>
+      <%= link_to "Requests", requests_path %> <%= link_to "Sitters", users_path %> <%= link_to "Login", new_session_path %> <%= link_to "Sign Up", new_user_path %>
+    </nav>
+    <%= yield %>
+  </body>
+</html>
