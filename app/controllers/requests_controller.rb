@@ -1,5 +1,6 @@
 class RequestsController < ApplicationController
   before_action :find_request, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate
   # before_action :authenticate, except: [:new, :create]
 
     def index

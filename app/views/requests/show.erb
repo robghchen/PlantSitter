@@ -18,9 +18,10 @@ Zip Code: <%= @request.owner.zip %>
     <%= button_to "Edit Request", edit_request_path(@request), method: :get %><br/>
     <%= button_to "Delete Request", request_path, method: :delete %>
   <% elsif @request.sitter == nil %>
-    <%= button_to "Claim" do %>
-      <% @request.set_sitter %>
+    <%= form_for @request do |f| %>
+      <%= f.hidden_field :sitter_id, :value=> session[:user_id] %>
+      <%= f.submit "Claim"%>
     <% end %>
-  <% elsif @request.sitter == @logged_in_user %>
-    some other functionality
+  <% elsif @request.sitter == @logged_in_user %> <br>
+    You have claimed this request
   <% end %>
