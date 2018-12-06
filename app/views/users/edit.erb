@@ -1,5 +1,7 @@
 <h2>Edit Profile</h2>
 
+
+
 <ul>
 <% if flash[:error] %>
   <% flash[:error].each do |error| %>
@@ -9,3 +11,11 @@
 </ul>
 
 <%= render "form" %>
+
+
+Add a plant!
+<%= form_for @join do |f| %>
+  <%= f.collection_select(:plant_id, @plants, :id, :species) %>
+  <%= f.hidden_field :user_id, :value=> session[:user_id]  %>
+  <%= f.submit "I own this fuckin plant" %>
+<% end %>

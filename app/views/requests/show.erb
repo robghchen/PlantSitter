@@ -4,7 +4,7 @@
 Plants you need to take care of:
 <ul>
   <% @request.owner.plants.each do |plant| %>
-    <li> <%= plant.species %>   </li>
+    <li> <%= plant.species %> <br> <%= image_tag(plant.img) %> </li>
   <% end %>
 </ul>
 

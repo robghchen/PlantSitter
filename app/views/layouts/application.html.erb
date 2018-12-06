@@ -11,8 +11,11 @@
 
   <body>
     <nav>
-      <%= link_to "Requests", requests_path %> <%= link_to "Sitters", users_path %>
-      <%= link_to "Login", new_session_path %> <%= link_to "Sign Up", new_user_path %>
+      <% if session[:user_id] %>
+        <%= link_to "Requests", requests_path %> <%= link_to "Sitters", users_path %> <%= link_to "Profile", user_path(@logged_in_user) %> <%= link_to "Log Out", session_path("current"), method: :delete %> 
+      <% else %>
+        <%= link_to "Login", new_session_path %> <%= link_to "Sign Up", new_user_path %>
+      <% end %>
     </nav>
     <%= yield %>
   </body>
