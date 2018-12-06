@@ -7,8 +7,8 @@
 
   <%= f.label :details %>
   <%= f.text_area :details %><br/>
-
+  <br>
   <%= f.hidden_field :owner_id, :value=> session[:user_id] %>
 
-  <%= f.submit %>
+  <%= f.submit 'Make request', class: 'submit-button' %>
 <% end %>

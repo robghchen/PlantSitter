@@ -1,22 +1,28 @@
-<h2>Login</h2>
+<div class='bg'>
+
+<div id='login'>
+
+<div class="form-title"><h2 style="text-align:center">Login</h2></div>
 
 <% if flash[:alert] %>
     <p style="color:red"><%= flash[:alert] %></p>
   <% end %>
 
-<%= form_with url: sessions_path, local:true do |f| %>
+<%= form_with url: sessions_path, html: {:class => 'form-container'}, local:true do |f| %>
 
-  <%= f.label :username %>
-  <%= f.text_field :username %> <br>
+  <%= f.label :username, class: 'form-title'%>
+  <%= f.text_field :username, class: 'form-field' %> <br>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %> <br>
+  <%= f.label :password, class: 'form-title' %>
+  <%= f.password_field :password , class: 'form-field' %> <br>
 
-  <%= f.submit "Log the fuck in motherfucker" %>
+  <%= f.submit "Log the fuck in motherfucker", class: 'submit-button' %>
 
 <% end %>
-<br>
-OR
-<br>
 
-<%= button_to "Create account", new_user_path, method: :get %>
+<div class="form-container">
+  <%=button_to "Create account", new_user_path, method: :get, class: 'submit-button'%>
+</div>
+
+</div>
+</div>

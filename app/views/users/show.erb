@@ -1,12 +1,12 @@
-<h2>Look at this plant parent</h2>
-<h3> <%= @user.name %>   </h3>
+<p></p>
+<h2> <%= @user.name %>   </h2>
 <p> <%= @user.bio %>    </p>
 
-<ul>
+<div class="row">
   <% @user.plants.each do |plant| %>
-  <li> <%= plant.species %> <br> <%= image_tag(plant.img) %> </li>
-  <% end %>
-</ul>
+     <div class = 'column'> <%= image_tag(plant.img) %> <br> <%= plant.species %> </div>
+   <% end %>
+</div>
 
 
 
@@ -15,6 +15,6 @@
 
 
 <% if @logged_in_user == @user %>
-<%= button_to "Edit Profile", edit_user_path(@user), method: :get %><br/>
-<%= button_to "Delete Account", user_path, method: :delete %>
+<%= button_to "Edit Profile", edit_user_path(@user), method: :get, class: 'submit-button' %><br/>
+<%= button_to "Delete Account", user_path, method: :delete, class: 'submit-button' %>
 <% end %>

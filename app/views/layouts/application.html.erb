@@ -12,11 +12,13 @@
   <body>
     <nav>
       <% if session[:user_id] %>
-        <%= link_to "Requests", requests_path %> <%= link_to "Sitters", users_path %> <%= link_to "Profile", user_path(@logged_in_user) %> <%= link_to "Log Out", session_path("current"), method: :delete %> 
+        <%= link_to "Requests", requests_path %>  <%= link_to "Profile", user_path(@logged_in_user) %> <%= link_to "Logout          ", session_path("current"), method: :delete %>
       <% else %>
-        <%= link_to "Login", new_session_path %> <%= link_to "Sign Up", new_user_path %>
+        <%= link_to "Login", new_session_path %> <%= link_to "SignUp", new_user_path %>
       <% end %>
     </nav>
+    <div id="main"
     <%= yield %>
+    </div>
   </body>
 </html>

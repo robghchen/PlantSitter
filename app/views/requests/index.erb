@@ -1,8 +1,16 @@
-<h2>Here are all the requests</h2>
-<ul>
+<p></p>
+<h2>Claim a Request</h2>
+<div class="row">
   <% @requests.each do |request| %>
-    <li><%= link_to request.title, request %></li>
+    <div class = 'column'><%= link_to request.title, request %> ($<%= request.price %>)<br>
+      <div class="row"><% request.owner.plants.each do |plant| %>
+        <div class = 'column'><%= link_to request do %> <%= image_tag(plant.img) %> <% end %></div>
+      <% end %></div><br>
+      </div>
   <% end %>
-</ul>
+</div>
 
-<%= button_to "New Request", new_request_path, method: :get %>
+
+
+
+<%= button_to "New Request", new_request_path, method: :get, class: 'submit-button' %>
