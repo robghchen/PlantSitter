@@ -2,7 +2,7 @@
 
 <div id='login'>
 
-<div class="form-title"><h2 style="text-align:center">Login</h2></div>
+<div class="form-title"><h2 id="loginText" style="text-align:center">Login</h2></div>
 
 <% if flash[:alert] %>
     <p style="color:red"><%= flash[:alert] %></p>
@@ -16,7 +16,7 @@
   <%= f.label :password, class: 'form-title' %>
   <%= f.password_field :password , class: 'form-field' %> <br>
 
-  <%= f.submit "Log the fuck in motherfucker", class: 'submit-button' %>
+  <%= f.submit "Login", class: 'submit-button' %>
 
 <% end %>
 

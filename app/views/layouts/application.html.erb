@@ -11,6 +11,8 @@
 
   <body>
     <nav>
+      <span id="logo"><%= link_to image_tag("/assets/logo.png"), requests_path %></span>
+      <span id="logotext"><%= link_to image_tag("/assets/logotext.png"), requests_path %></span>
       <% if session[:user_id] %>
         <%= link_to "Requests", requests_path %>  <%= link_to "Profile", user_path(@logged_in_user) %> <%= link_to "Logout          ", session_path("current"), method: :delete %>
       <% else %>

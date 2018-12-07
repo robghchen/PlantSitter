@@ -19,7 +19,7 @@
 <%= form_for @join do |f| %>
   <%= f.collection_select(:plant_id, @plants, :id, :species) %>
   <%= f.hidden_field :user_id, :value=> session[:user_id]  %>
-  <%= f.submit "I own this fuckin plant", class: 'submit-button' %>
+  <%= f.submit "I own this plant", class: 'submit-button' %>
 <% end %>
 
 </div>
