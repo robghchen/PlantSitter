@@ -2,11 +2,14 @@
 <h2>Claim a Request</h2>
 <div class="row">
   <% @requests.each do |request| %>
-    <div class = 'column'><%= link_to request.title, request %> ($<%= request.price %>)<br>
-      <div class="row"><% request.owner.plants.each do |plant| %>
-        <div class = 'column'><%= link_to request do %> <%= image_tag(plant.img) %> <% end %></div>
-      <% end %></div><br>
+    <% if request.sitter_id == nil %>
+      <div class = 'column'><%= link_to request.title, request %> ($<%= request.price %>)<br>
+        <div class="row"><% request.owner.plants.each do |plant| %>
+          <div class = 'column'><%= link_to request do %> <%= image_tag(plant.img) %> <% end %></div>
+        <% end %>
+        </div><br>
       </div>
+    <% end %>
   <% end %>
 </div>
 

@@ -13,7 +13,7 @@
 Username: <%= link_to @request.owner.name, user_path(@request.owner) %><br>
 Phone Number: <%= @request.owner.phone %> <br>
 Email: <%= @request.owner.email %><br>
-Zip Code: <%= @request.owner.zip %><br>
+Zip Code: <%= @request.owner.zip %><br><br>
   <% if @request.owner == @logged_in_user %>
     <br><%= button_to "Edit Request", edit_request_path(@request), method: :get, class: 'submit-button' %><br/>
     <%= button_to "Delete Request", request_path, method: :delete, class: 'submit-button' %>

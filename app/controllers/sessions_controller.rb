@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       log_in!(@user)
       redirect_to user_path(@user)
     else
-      flash[:alert] = "Incorrect username/password. You suck."
+      flash[:alert] = "Incorrect username/password."
       redirect_to new_session_path
     end
   end

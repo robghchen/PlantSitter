@@ -7,7 +7,9 @@ class UsersController < ApplicationController
     end
 
     def show
-        @join = UserPlant.new
+      @requests = Request.all
+      @plants = Plant.all
+      @join = UserPlant.new
     end
 
     def new

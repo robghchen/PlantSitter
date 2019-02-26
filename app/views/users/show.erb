@@ -8,13 +8,33 @@
    <% end %>
 </div>
 
+<div class="right-side">
+  <h2>Add a plant to your collection!</h2>
+  <%= form_for @join do |f| %>
+    <%= f.collection_select(:plant_id, @plants, :id, :species) %>
+    <%= f.hidden_field :user_id, :value=> session[:user_id]  %>
+    <%= f.submit "I own this plant", class: 'submit-button' %>
+  <% end %>
 
+  <br>
+  <h2>Edit Profile</h2>
+  <% if @logged_in_user == @user %>
+    <%= button_to "Edit Profile", edit_user_path(@user), method: :get, class: 'submit-button' %><br/>
+    <%= button_to "Delete Account", user_path, method: :delete, class: 'submit-button' %>
+  <% end %>
+</div>
 
-
-
-
-
-<% if @logged_in_user == @user %>
-<%= button_to "Edit Profile", edit_user_path(@user), method: :get, class: 'submit-button' %><br/>
-<%= button_to "Delete Account", user_path, method: :delete, class: 'submit-button' %>
-<% end %>
+<div>
+  <br>
+  <% @requests.each do |request| %>
+  <% if request.sitter_id == session[:user_id] %>
+  <h2>Requests Claimed</h2>
+  <div class = 'column'><%= link_to request.title, request %> ($<%= request.price %>)<br>
+    <div class="row"><% request.owner.plants.each do |plant| %>
+      <div class = 'column'><%= link_to request do %> <%= image_tag(plant.img) %> <% end %></div>
+      <% end %>
+    </div><br>
+  </div>
+  <% end %>
+  <% end %>
+</div>

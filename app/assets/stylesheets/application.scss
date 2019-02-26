@@ -220,10 +220,18 @@ body, html {
 
 .right {
   position: absolute;
- top: 110px;
- right: 0%;
- margin-left: -50%;
- transform: translate(-50%, -50%);
+  top: 110px;
+  right: 0%;
+  margin-left: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.right-side {
+  position: absolute;
+  top: 210px;
+  right: 0%;
+  margin-left: -50%;
+  transform: translate(-50%, -50%);
 }
 
 #logo {
